@@ -1,0 +1,619 @@
+/* ResidentAnalytics.css */
+
+.resident-analytics {
+  padding: 24px;
+  background-color: var(--page, #f8f9fa);
+  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.analytics-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  font-size: 18px;
+  color: #666;
+}
+
+.analytics-error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  font-size: 16px;
+  color: #e74c3c;
+  text-align: center;
+  padding: 20px;
+}
+
+.no-data-message {
+  text-align: center;
+  padding: 40px 20px;
+  color: #666;
+}
+
+.no-data-message h3 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.no-data-message p {
+  margin: 0;
+  font-size: 14px;
+}
+
+/* Header */
+.analytics-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid rgba(67,80,48,0.15);
+  gap: 16px;
+}
+
+.back-button {
+  padding: 8px 16px;
+  background-color: var(--surface, #ffffff);
+  border: 1px solid rgba(67,80,48,0.25);
+  border-radius: 8px;
+  color: var(--text-dark, #333);
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s;
+  margin-top: 2px;
+}
+
+.back-button:hover {
+  background-color: var(--accent, #D9F79B);
+  border-color: var(--accent, #D9F79B);
+  color: var(--bg, #435030);
+}
+
+.resident-info {
+  flex: 1;
+  margin: 0 16px;
+}
+
+.resident-info h1 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-dark, #333);
+  line-height: 1.2;
+}
+
+.room-info {
+  font-size: 14px;
+  color: #666;
+  font-weight: 500;
+  margin-top: 4px;
+}
+
+.time-range-select {
+  padding: 8px 12px;
+  border: 1px solid rgba(67,80,48,0.25);
+  border-radius: 8px;
+  background-color: var(--surface, #ffffff);
+  color: var(--text-dark, #333);
+  font-size: 14px;
+  margin-top: 2px;
+}
+
+/* Prediction Banners */
+.prediction-banners {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.prediction-banner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  border-radius: 12px;
+  border-left: 4px solid;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.prediction-banner.high-risk {
+  background-color: #fef2f2;
+  border-left-color: #ef4444;
+}
+
+.prediction-banner.medium-risk {
+  background-color: #fffbeb;
+  border-left-color: #f59e0b;
+}
+
+.banner-icon {
+  font-size: 24px;
+}
+
+.prediction-banner strong {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.prediction-banner p {
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+}
+
+/* Analytics Grid */
+.analytics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 24px;
+}
+
+.analytics-section {
+  background-color: var(--surface, #ffffff);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  border: 1px solid rgba(67,80,48,0.15);
+}
+
+.analytics-section h3 {
+  margin: 0 0 20px 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-dark, #333);
+}
+
+/* Charts */
+.chart-container h3 {
+  margin-bottom: 16px;
+}
+
+.chart-legend {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.legend-item {
+  font-size: 12px;
+  font-weight: 500;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.legend-item.heart-rate {
+  background-color: #fef2f2;
+  color: #dc2626;
+}
+
+.legend-item.bp-systolic {
+  background-color: #eff6ff;
+  color: #2563eb;
+}
+
+.legend-item.temperature {
+  background-color: #f0fdf4;
+  color: #16a34a;
+}
+
+.simple-chart .chart-data {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 8px 0;
+}
+
+.data-point {
+  min-width: 80px;
+  text-align: center;
+}
+
+.data-point .date {
+  font-size: 11px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.data-point .values {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.data-point .value {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 6px;
+  border-radius: 4px;
+}
+
+.value.heart-rate {
+  background-color: #fef2f2;
+  color: #dc2626;
+}
+
+.value.bp-systolic {
+  background-color: #eff6ff;
+  color: #2563eb;
+}
+
+.value.temperature {
+  background-color: #f0fdf4;
+  color: #16a34a;
+}
+
+/* Cognitive Chart */
+.cognitive-chart {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.baseline-info {
+  font-size: 14px;
+  color: #666;
+  font-weight: 500;
+}
+
+.mmse-trend {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 8px 0;
+}
+
+.mmse-point {
+  min-width: 60px;
+  text-align: center;
+}
+
+.mmse-date {
+  font-size: 11px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.mmse-score {
+  font-size: 16px;
+  font-weight: 700;
+  padding: 8px;
+  border-radius: 8px;
+  border: 2px solid;
+}
+
+.mmse-score.good {
+  background-color: #f0fdf4;
+  border-color: #16a34a;
+  color: #16a34a;
+}
+
+.mmse-score.moderate {
+  background-color: #fffbeb;
+  border-color: #f59e0b;
+  color: #f59e0b;
+}
+
+.mmse-score.concerning {
+  background-color: #fef2f2;
+  border-color: #ef4444;
+  color: #ef4444;
+}
+
+/* Section Containers */
+.section-container h3 {
+  margin-bottom: 16px;
+}
+
+/* Mobility */
+.mobility-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.mobility-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mobility-item label {
+  font-size: 12px;
+  color: #666;
+  font-weight: 500;
+}
+
+.mobility-level {
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 10px;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.mobility-level.level-0 {
+  background-color: #f0fdf4;
+  color: #16a34a;
+}
+
+.mobility-level.level-1 {
+  background-color: #f7fee7;
+  color: #65a30d;
+}
+
+.mobility-level.level-2 {
+  background-color: #fffbeb;
+  color: #f59e0b;
+}
+
+.mobility-level.level-3 {
+  background-color: #fef2f2;
+  color: #ef4444;
+}
+
+.mobility-level.level-4 {
+  background-color: #fdf2f8;
+  color: #ec4899;
+}
+
+.fall-count {
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  padding: 6px;
+  border-radius: 6px;
+}
+
+.fall-count.low {
+  background-color: #f0fdf4;
+  color: #16a34a;
+}
+
+.fall-count.moderate {
+  background-color: #fffbeb;
+  color: #f59e0b;
+}
+
+.fall-count.high {
+  background-color: #fef2f2;
+  color: #ef4444;
+}
+
+.flags-grid {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.flag {
+  font-size: 12px;
+  font-weight: 500;
+  padding: 4px 8px;
+  border-radius: 4px;
+  background-color: #fffbeb;
+  color: #f59e0b;
+  border: 1px solid #f59e0b;
+}
+
+/* Clinical Flags */
+.clinical-flags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.clinical-flag {
+  font-size: 12px;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid;
+}
+
+.clinical-flag.hypotensionFlag,
+.clinical-flag.hypoxiaFlag {
+  background-color: #fef2f2;
+  border-color: #ef4444;
+  color: #ef4444;
+}
+
+.clinical-flag.tachycardiaFlag,
+.clinical-flag.feverFlag {
+  background-color: #fff7ed;
+  border-color: #f97316;
+  color: #f97316;
+}
+
+.clinical-flag.cognitiveImpairmentFlag,
+.clinical-flag.highRiskMedFlag {
+  background-color: #fffbeb;
+  border-color: #f59e0b;
+  color: #f59e0b;
+}
+
+.no-flags {
+  color: #16a34a;
+  font-style: italic;
+  margin: 0;
+}
+
+/* Medication */
+.medication-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.med-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.med-item label {
+  font-size: 12px;
+  color: #666;
+  font-weight: 500;
+}
+
+.med-count,
+.dose-rate {
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  padding: 6px;
+  border-radius: 6px;
+}
+
+.med-count.normal,
+.dose-rate.low {
+  background-color: #f0fdf4;
+  color: #16a34a;
+}
+
+.med-count.moderate,
+.dose-rate.moderate {
+  background-color: #fffbeb;
+  color: #f59e0b;
+}
+
+.med-count.high,
+.dose-rate.high {
+  background-color: #fef2f2;
+  color: #ef4444;
+}
+
+/* Loading */
+.analytics-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+  font-size: 18px;
+  color: #666;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .resident-analytics {
+    padding: 16px;
+  }
+
+  .analytics-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .header-left {
+    width: 100%;
+  }
+
+  .analytics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .prediction-banners {
+    flex-direction: column;
+  }
+
+  .mobility-grid,
+  .medication-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Chart wrapper for Recharts */
+.chart-wrapper {
+  margin: 15px 0;
+}
+
+/* Recharts legend styling */
+.chart-wrapper .recharts-legend-wrapper {
+  font-size: 11px !important;
+}
+
+.chart-wrapper .recharts-legend-item-text {
+  font-size: 11px !important;
+}
+
+/* Recharts responsive container */
+.chart-wrapper .recharts-surface {
+  font-size: 11px;
+}
+
+/* Vitals summary */
+.vitals-summary {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #ecf0f1;
+}
+
+.vital-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.stat-label {
+  font-size: 11px;
+  color: #7f8c8d;
+  font-weight: 500;
+}
+
+.stat-value {
+  font-size: 13px;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+/* Cognitive summary */
+.cognitive-summary {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #ecf0f1;
+}
+
+.cognitive-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.cognitive-stat .stat-label {
+  font-size: 11px;
+}
+
+.cognitive-stat .stat-value {
+  font-size: 13px;
+}
+
+.cognitive-stat .stat-value.concerning {
+  color: #e74c3c;
+}
+
+.cognitive-stat .stat-value.moderate {
+  color: #f39c12;
+}
+
+.cognitive-stat .stat-value.good {
+  color: #27ae60;
+}
+
+.cognitive-stat .stat-value.stable {
+  color: #27ae60;
+}

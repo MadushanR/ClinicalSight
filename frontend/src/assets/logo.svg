@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <rect width="200" height="200" fill="#435030"/>
+  <circle cx="100" cy="80" r="35" fill="#ffffff"/>
+  <path d="M 70 130 Q 100 110 130 130 L 130 160 Q 100 175 70 160 Z" fill="#ffffff"/>
+  <text x="100" y="190" font-size="16" fill="#ffffff" text-anchor="middle" font-weight="bold">ClinicalSight</text>
+</svg>
